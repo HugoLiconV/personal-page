@@ -13,34 +13,38 @@ body {
 }
 
 h1 {
-  font-size: 2.25 rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 1.875 rem;
+  font-size: 1.875rem;
 }
 
 h3 {
-  font-size: 1.5 rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1.25 rem;
+  font-size: 1.25rem;
 }
 
 .introduction {
-  font-size: 1.125 rem;
+  font-size: 1.125rem;
 }
 
 p {
-  font-size: 0.875 rem;
-  line-height: 1.25 rem;
-  margin-bottom: 0.625 rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.625rem;
 }
 
 a {
   color: #fff;
   text-decoration: none;
+}
+
+.underline {
   transition: all 0.3s ease;
   transition-property: box-shadow, border-bottom;
   border-bottom: 2px solid #4d40ff71;
