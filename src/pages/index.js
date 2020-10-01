@@ -1,9 +1,7 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import About from "./about"
+import Home from "./home"
 
-const IndexPage = () => <About />
+const IndexPage = () => <Home />
 
 export default IndexPage

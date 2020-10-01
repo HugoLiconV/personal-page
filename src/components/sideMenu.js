@@ -42,16 +42,8 @@ const SideMenu = ({ open, onLinkClick }) => {
       name: "About",
     },
     {
-      to: "/projects",
-      name: "Projects",
-    },
-    {
       to: "/blog",
       name: "Blog",
-    },
-    {
-      to: "/contact",
-      name: "Contact",
     },
     {
       to: "/reading",
