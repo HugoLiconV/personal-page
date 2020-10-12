@@ -1,10 +1,14 @@
-html {
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+* {
+  margin-top: 0;
 }
 
 body {
@@ -44,9 +48,56 @@ a {
   text-decoration: none;
 }
 
-.underline {
+a:hover, .underline{
   transition: all 0.3s ease;
   transition-property: box-shadow, border-bottom;
-  border-bottom: 2px solid #4d40ff71;
   box-shadow: inset 0 -2px 0 0 #4c40ff;
+}
+
+.active {
+  color: #4c40ff;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.card {
+  display: grid;
+  overflow: hidden;
+  line-height: 1.5;
+  background-color: #111111;
+  filter: brightness(200%);
+  border-radius: 9px;
+  
+}
+
+.card > a img {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+}
+
+.card > header {
+  padding: 24px;
+}
+
+.card > h2:first-child {
+  margin: 0 0 0.5rem 0;
+}
+
+.card .post-tilte {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .grids {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

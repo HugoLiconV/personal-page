@@ -42,11 +42,11 @@ const SideMenu = ({ open, onLinkClick }) => {
       name: "About",
     },
     {
-      to: "/blog",
+      to: "/blog/",
       name: "Blog",
     },
     {
-      to: "/reading",
+      to: "/reading/",
       name: "Reading",
     },
   ]
@@ -54,7 +54,7 @@ const SideMenu = ({ open, onLinkClick }) => {
   function renderLink({ to, name }) {
     return (
       <li key={to} onClick={onLinkClick}>
-        <Link to={to}>
+        <Link to={to} activeClassName="active">
           <h3>{name}</h3>
         </Link>
       </li>
