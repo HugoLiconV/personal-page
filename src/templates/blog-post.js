@@ -10,7 +10,7 @@ export default function Template({
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>
           {frontmatter.title} | {siteMetadata.title}
@@ -40,7 +40,7 @@ export default function Template({
           />
         </article>
       </div>
-    </Layout>
+    </>
   )
 }
 

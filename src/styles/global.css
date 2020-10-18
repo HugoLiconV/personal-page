@@ -71,8 +71,7 @@ a:hover, .underline{
   display: grid;
   overflow: hidden;
   line-height: 1.5;
-  background-color: #111111;
-  filter: brightness(200%);
+  background-color: #2b2b2b;
   border-radius: 9px;
   
 }
