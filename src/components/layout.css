@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -231,8 +230,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
@@ -247,8 +246,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
@@ -263,8 +262,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -279,8 +278,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -295,8 +294,8 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
   line-height: 1.1;
@@ -311,8 +310,8 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Abril Fatface", cursive;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
@@ -492,16 +491,16 @@ address {
   margin-bottom: 1.45rem;
 }
 b {
-  font-weight: bold;
+  font-weight: 700;
 }
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 dt {
-  font-weight: bold;
+  font-weight: 700;
 }
 th {
-  font-weight: bold;
+  font-weight: 700;
 }
 li {
   margin-bottom: calc(1.45rem / 2);
