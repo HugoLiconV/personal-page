@@ -12,22 +12,23 @@ const Blog = ({
     <PostLink key={edge.node.id} post={edge.node} />
   ))
   return (
-    <>
+    <div>
       <Helmet>
         <title>Blog</title>
         <meta name="description" content="" />
       </Helmet>
       <h2>Blog</h2>
-      <div className="grids">
-        {Posts}
-      </div>
-    </>
+      <div className="grids">{Posts}</div>
+    </div>
   )
 }
 
 export const pageQuery = graphql`
   query indexPageQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "BlogPost" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id

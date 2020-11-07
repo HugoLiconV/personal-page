@@ -70,11 +70,11 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: projects
     label: Projects
-    folder: _data/proyects
+    folder: _data/projects
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: Proyect }
+      - { label: Template, name: template, widget: hidden, default: Project }
       - { name: title, label: Title }
       - { label: "Description", name: "description", widget: "text" }
       - {

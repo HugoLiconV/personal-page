@@ -44,7 +44,13 @@ const Contact = () => {
         style={{ display: "flex", width: 150, justifyContent: "space-around" }}
       >
         {contactLinks.map(({ alt, href, src }) => (
-          <a href={href} target="_blank" rel="noopener noreferrer" key={href}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="not-underline"
+            key={href}
+          >
             <img src={src} alt={alt} height={24} />
           </a>
         ))}

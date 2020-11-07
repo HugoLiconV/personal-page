@@ -1,5 +1,5 @@
 ---
-template: Proyect
+template: Project
 title: Spotify Clone
 description: >+
   A Spotify clone using React, Redux, Jest, Enzyme. It's a PWA so it can be
