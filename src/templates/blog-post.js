@@ -1,7 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -10,7 +9,7 @@ export default function Template({
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
   return (
-    <>
+    <div>
       <Helmet>
         <title>
           {frontmatter.title} | {siteMetadata.title}
@@ -34,13 +33,15 @@ export default function Template({
               <div className="post-meta">{frontmatter.date}</div>
             </div>
           )}
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          {html ? (
+            <div
+              className="blog-post-content"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          ) : null}
         </article>
       </div>
-    </>
+    </div>
   )
 }
 
