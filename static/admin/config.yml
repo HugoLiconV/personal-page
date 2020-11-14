@@ -98,3 +98,25 @@ collections:
         media_library:
           config:
             multiple: false
+  - name: notes
+    label: Notes
+    folder: _data/notes
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - { label: Template, name: template, widget: hidden, default: Note }
+      - name: path
+        label: Path
+        widget: string
+        pattern: [/, "Path must start with /"]
+        hint: "Path must start with /"
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - label: Meta Description
+        name: metaDescription
+        widget: text
+        required: false
+        media_library:
+          config:
+            multiple: false
+      - { name: body, label: Body, widget: markdown }
