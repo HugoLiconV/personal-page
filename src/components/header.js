@@ -4,17 +4,19 @@ import styled from "styled-components"
 import SideMenu from "./sideMenu"
 
 const BurgerContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
 `
 
 const IconContainer = styled.div`
   width: 2rem;
   height: 2rem;
-  margin: 16px;
   top: 15px;
   right: 20px;
-  display: none;
 
   @media (max-width: 768px) {
     display: flex;
@@ -55,17 +57,41 @@ const BurgerButton = styled.button`
   z-index: 50;
 `
 
-const Header = () => {
+const CurrentPageTitle = styled.h1`
+  margin: 0;
+`
+
+const Header = ({ path, location }) => {
   const [open, setOpen] = useState(false)
+  const paths = [
+    {
+      to: "/",
+      name: "About",
+    },
+    {
+      to: "/blog/",
+      name: "Blog",
+    },
+    {
+      to: "/reading/",
+      name: "Reading",
+    },
+    {
+      to: "/notes/",
+      name: "Notes",
+    },
+  ]
+  const currentPage = paths.find(({ to }) => to === path) || ""
 
   return (
     <header>
       <BurgerContainer>
+        <CurrentPageTitle>{currentPage.name}</CurrentPageTitle>
         <BurgerButton onClick={() => setOpen(!open)}>
           <BurgerIcon open={open} />
         </BurgerButton>
       </BurgerContainer>
-      <SideMenu open={open} onLinkClick={() => setOpen(false)} />
+      <SideMenu open={open} onLinkClick={() => setOpen(false)} paths={paths} />
     </header>
   )
 }

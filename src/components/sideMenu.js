@@ -17,6 +17,7 @@ const Ul = styled.ul`
 
   /* mobile styles */
   @media (max-width: 768px) {
+    z-index: 1;
     flex-flow: column;
     background-color: #111;
     position: fixed;
@@ -35,22 +36,7 @@ const Ul = styled.ul`
     }
   }
 `
-const SideMenu = ({ open, onLinkClick }) => {
-  const links = [
-    {
-      to: "/",
-      name: "About",
-    },
-    {
-      to: "/blog/",
-      name: "Blog",
-    },
-    {
-      to: "/reading/",
-      name: "Reading",
-    },
-  ]
-
+const SideMenu = ({ open, onLinkClick, paths }) => {
   function renderLink({ to, name }) {
     return (
       <li key={to} onClick={onLinkClick}>
@@ -61,7 +47,7 @@ const SideMenu = ({ open, onLinkClick }) => {
     )
   }
 
-  return <Ul open={open}>{links.map(renderLink)}</Ul>
+  return <Ul open={open}>{paths.map(renderLink)}</Ul>
 }
 
 export default SideMenu

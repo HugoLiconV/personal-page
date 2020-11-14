@@ -15,7 +15,7 @@ import "./layout.css"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 deckDeckGoHighlightElement()
 
-const Layout = ({ children }) => {
+const Layout = ({children, path, location}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <Header path={path} location={location} />
       <div
         style={{
           margin: `0 auto`,

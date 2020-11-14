@@ -3,7 +3,6 @@ import React from "react"
 const About = () => {
   return (
     <>
-      <h1>About</h1>
       <p>
         Full-stack developer with experience building complete solutions on
         React, Node and React Native.

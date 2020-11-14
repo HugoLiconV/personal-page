@@ -17,7 +17,6 @@ const Blog = ({
         <title>Blog</title>
         <meta name="description" content="" />
       </Helmet>
-      <h2>Blog</h2>
       <div className="grids">{Posts}</div>
     </div>
   )

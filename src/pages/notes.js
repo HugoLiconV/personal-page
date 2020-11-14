@@ -1,7 +1,7 @@
 import React from "react"
 
-const Reading = () => {
+const Notes = () => {
   return <div></div>
 }
 
-export default Reading
+export default Notes
