@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import SideMenu from "./sideMenu"
 
-const StyledBurger = styled.div`
+const BurgerContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `
@@ -14,7 +14,6 @@ const IconContainer = styled.div`
   margin: 16px;
   top: 15px;
   right: 20px;
-  z-index: 20;
   display: none;
 
   @media (max-width: 768px) {
@@ -49,14 +48,23 @@ const BurgerIcon = ({ open }) => (
   </IconContainer>
 )
 
-const Header = ({ siteTitle }) => {
+const BurgerButton = styled.button`
+  border: none;
+  background-color: transparent;
+  outline: none;
+  z-index: 50;
+`
+
+const Header = () => {
   const [open, setOpen] = useState(false)
 
   return (
     <header>
-      <StyledBurger onClick={() => setOpen(!open)}>
-        <BurgerIcon open={open} />
-      </StyledBurger>
+      <BurgerContainer>
+        <BurgerButton onClick={() => setOpen(!open)}>
+          <BurgerIcon open={open} />
+        </BurgerButton>
+      </BurgerContainer>
       <SideMenu open={open} onLinkClick={() => setOpen(false)} />
     </header>
   )
