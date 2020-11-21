@@ -13,9 +13,16 @@ import Header from "./header"
 // import 'prismjs/themes/prism-okaidia.css'
 import "./layout.css"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+import styled from "styled-components"
 deckDeckGoHighlightElement()
 
-const Layout = ({children, path, location}) => {
+const Main = styled.div`
+  margin: 0 auto;
+  max-width: 960;
+  padding: 0 1.0875rem 1.45rem;
+`
+
+const Layout = ({ children, path, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,20 +36,7 @@ const Layout = ({children, path, location}) => {
   return (
     <>
       <Header path={path} location={location} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Main>{children}</Main>
     </>
   )
 }
