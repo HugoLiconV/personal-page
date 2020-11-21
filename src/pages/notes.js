@@ -4,34 +4,34 @@ import PostLink from "../components/post-link"
 
 const Notes = (
   {
-    // data: {
-    //   allMarkdownRemark: { edges },
-    // },
+    data: {
+      allMarkdownRemark: { edges },
+    },
   }
 ) => {
-  // const Posts = edges.map(edge => (
-  //   <PostLink key={edge.node.id} post={edge.node} />
-  // ))
+  const Posts = edges.map(edge => (
+    <PostLink key={edge.node.id} post={edge.node} />
+  ))
   return <div className="grids">Notes</div>
 }
-// export const pageQuery = graphql`
-//   query notesQuery {
-//     allMarkdownRemark(
-//       filter: { frontmatter: { template: { eq: "Note" } } }
-//       sort: { order: DESC, fields: [frontmatter___date] }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             thumbnail
-//             path
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query notesQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "Note" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            thumbnail
+            path
+          }
+        }
+      }
+    }
+  }
+`
 export default Notes
