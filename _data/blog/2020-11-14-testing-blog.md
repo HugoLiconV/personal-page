@@ -1,8 +1,38 @@
 ---
 template: BlogPost
-path: /testing-blog
-date: 2020-11-14T05:00:59.843Z
-title: Testing Blog
-metaDescription: Testing
+path: /with-code-blog
+date: 2020-02-20T15:08:12.174Z
+title: Code with Syntax Highlighting with PrismJS
 ---
-Testing
+
+### Code Highlighting
+```javascript
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Navigation from "../components/navigation"
+
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+  return (
+    <div className="site-wrapper">
+      <header className="site-header">
+        <div className="site-title">
+          <Link to="/">{data.site.siteMetadata.title}</Link>
+        </div>
+        <Navigation />
+      </header>
+      {children}
+    </div>
+  )
+}
+```
