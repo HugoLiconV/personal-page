@@ -12,7 +12,7 @@ const Notes = (
   const Posts = edges.map(edge => (
     <PostLink key={edge.node.id} post={edge.node} />
   ))
-  return <div className="grids">Notes</div>
+  return <div className="grids">{Posts}</div>
 }
 export const pageQuery = graphql`
   query notesQuery {
