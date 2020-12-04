@@ -2,7 +2,7 @@ import React from "react"
 
 /**
  * @typedef {Object} Project
- * @property {string} name
+ * @property {string} title
  * @property {string} description
  * @property {string} sourceCode
  * @property {string} url
@@ -14,9 +14,9 @@ const Projects = ({ projects }) => {
     <>
       <h1>Projects</h1>
       {projects.map(project => (
-        <div key={project.name}>
-          <h3>{project.name}</h3>
-          <img src={project.thumbnail} alt={project.name} key={project.name} />
+        <div key={project.title}>
+          <h3>{project.title}</h3>
+          <img src={project.thumbnail} alt={project.title} key={project.title} />
           <p>{project.description}</p>
           {project.sourceCode ? (
             <a
