@@ -92,7 +92,7 @@ a:not(.active):not(.not-underline):hover,
   display: grid;
   overflow: hidden;
   line-height: 1.5;
-  background-color: #2b2b2b;
+  background-color: #131516;
   border-radius: 9px;
 }
 
