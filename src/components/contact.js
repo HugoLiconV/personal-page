@@ -31,15 +31,17 @@ const Contact = () => {
   return (
     <>
       <h1>Contact</h1>
-      If you would like to talk send me an{" "}
-      <a
-        href="mailto:hugo.val28@gmail.com"
-        className="underline"
-        style={{ margin: "1rem 0" }}
-      >
-        email.
-      </a>
-      <p>You cand find me on:</p>
+      <p>
+        If you would like to talk send me an{" "}
+        <a
+          href="mailto:hugo.val28@gmail.com"
+          className="underline"
+          style={{ margin: "1rem 0" }}
+        >
+          email
+        </a>{" "}
+        or you cand find me on:
+      </p>
       <div
         style={{ display: "flex", width: 150, justifyContent: "space-around" }}
       >
