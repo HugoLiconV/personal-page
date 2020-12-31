@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         filter: { frontmatter: { template: { in: ["BlogPost", "Note"] } } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -30,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,

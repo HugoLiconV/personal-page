@@ -3,9 +3,10 @@ import React from "react"
 import About from "../components/about"
 import Contact from "../components/contact"
 import Projects from "../components/projects"
+import { Helmet } from "react-helmet"
 
-const IndexPage = ({ data: { allMarkdownRemark } }) => {
-  const projects = allMarkdownRemark.edges
+const IndexPage = ({ data: { allMdx } }) => {
+  const projects = allMdx.edges
     .map(e => e.node)
     .map(node => ({ id: node.id, ...node.frontmatter }))
   return (
@@ -19,7 +20,7 @@ const IndexPage = ({ data: { allMarkdownRemark } }) => {
 
 export const query = graphql`
   query homePageQuery {
-    allMarkdownRemark(
+    allMdx(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { template: { eq: "Project" } } }
     ) {

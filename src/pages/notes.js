@@ -5,7 +5,7 @@ import PostLink from "../components/post-link"
 const Notes = (
   {
     data: {
-      allMarkdownRemark: { edges },
+      allMdx: { edges },
     },
   }
 ) => {
@@ -16,7 +16,7 @@ const Notes = (
 }
 export const pageQuery = graphql`
   query notesQuery {
-    allMarkdownRemark(
+    allMdx(
       filter: { frontmatter: { template: { eq: "Note" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

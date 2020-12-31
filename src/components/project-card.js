@@ -2,30 +2,41 @@ import React from "react"
 import styled from "styled-components"
 
 const Card = styled.div`
-  width: 100%;
-  height: 100%;
   color: white;
   display: flex;
-  background-color: #131516;
-  flex-direction: row;
-  margin-bottom: 16px;
-  height: 180px;
+  background-color: rgb(10, 25, 41);
+  margin-bottom: 2rem;
   border-radius: 10px;
+  flex-direction: column;
 
   .image-container {
-    background-size: cover;
-    width: 25%;
-    min-width: 25%;
-    height: 100%;
-  }
-  .img {
-    object-fit: cover;
-    border-bottom-left-radius: 6px;
-    border-top-left-radius: 6px;
     width: 100%;
     height: 100%;
   }
-  
+
+  .img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    height: 180px;
+    .image-container {
+      width: 25%;
+      min-width: 25%;
+      height: 100%;
+    }
+    .img {
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+  }
 `
 
 const CardBody = styled.div`
@@ -46,22 +57,6 @@ const CardActions = styled.div`
   justify-content: flex-end;
 `
 
-const PriceLabel = styled.span`
-  color: #696969;
-  text-transform: uppercase;
-`
-
-const Price = styled.span`
-  font-size: 0.875rem;
-  &:before {
-    content: "$";
-  }
-`
-
-const CardTitle = styled.h3`
-
-`
-
 /**
  * @typedef {Object} Project
  * @property {string} title
@@ -71,15 +66,14 @@ const CardTitle = styled.h3`
  * @property {string} thumbnail
  */
 
-
 /**
  *
  * @param {Object} props
- * @param {Project} props.project 
+ * @param {Project} props.project
  */
 function ProjectCard({ project }) {
   return (
-    <Card className="">
+    <Card>
       <figure className="image-container m-0 p-0">
         <img
           src={project.thumbnail}
@@ -89,7 +83,7 @@ function ProjectCard({ project }) {
       </figure>
       <CardBody>
         <div>
-          <CardTitle className="bold m-0">{project.title}</CardTitle>
+          <h3 className="bold m-0">{project.title}</h3>
           <CardDescription>{project.description}</CardDescription>
         </div>
         <CardActions>

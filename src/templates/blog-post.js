@@ -1,13 +1,15 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import Provider from "../components/provider"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { site, markdownRemark } = data // data.markdownRemark holds your post data
+  const { site, mdx } = data // data.mdx holds your post data
   const { siteMetadata } = site
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, body } = mdx
   return (
     <div>
       <Helmet>
@@ -33,12 +35,9 @@ export default function Template({
               <div className="post-meta">{frontmatter.date}</div>
             </div>
           )}
-          {html ? (
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          ) : null}
+          <Provider>
+            <MDXRenderer>{body}</MDXRenderer>
+          </Provider>
         </article>
       </div>
     </div>
@@ -52,8 +51,8 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    mdx(frontmatter: { path: { eq: $path } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

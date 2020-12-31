@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 
 const Blog = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   },
 }) => {
   const Posts = edges.map(edge => (
@@ -24,7 +24,7 @@ const Blog = ({
 
 export const pageQuery = graphql`
   query indexPageQuery {
-    allMarkdownRemark(
+    allMdx(
       filter: { frontmatter: { template: { eq: "BlogPost" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

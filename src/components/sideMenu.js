@@ -19,7 +19,7 @@ const Ul = styled.ul`
   @media (max-width: 768px) {
     z-index: 1;
     flex-flow: column;
-    background-color: #111;
+    background-color: rgb(0, 15, 31);
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
