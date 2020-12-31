@@ -7,6 +7,7 @@ metaDescription: Code with Syntax Highlighting with PrismJS
 ---
 
 ### Code Highlighting
+
 ```javascript
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"

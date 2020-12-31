@@ -1,4 +1,5 @@
 # Hugo's personal Website
+
 This is a work in progress.
 
 ## Design
@@ -17,11 +18,10 @@ You can find the sketch file in the resources folder.
 
 ## 🚀 Quick start
 
-
 1.  **Start developing.**
 
     ```shell
     gatsby develop
     ```
-    
+
     Your site is now running at `http://localhost:8000`!

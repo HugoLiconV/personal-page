@@ -81,13 +81,21 @@ collections:
           label: "Source Code URL",
           name: "sourceCode",
           hint: "GitHub Repository",
-          pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', "It needs to be a valid URL"],
+          pattern:
+            [
+              'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+              "It needs to be a valid URL",
+            ],
           required: false,
         }
       - {
           label: "Live Version URL",
           name: "url",
-          pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', "It needs to be a valid URL"],
+          pattern:
+            [
+              'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)',
+              "It needs to be a valid URL",
+            ],
           required: false,
         }
       - label: Thumbnail

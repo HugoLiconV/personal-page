@@ -5,19 +5,20 @@ date: 2020-11-23T01:54:03.921Z
 title: How to setup Ubuntu for software development
 metaDescription: How to setup Ubuntu for software development
 ---
+
 # Setting Ubuntu Up
 
-Programs: 
+Programs:
 
-* Slack
-* VSCode
-* Chrome
-* Glimpse
-* Terminator
-* Gnome Tweaks
-* Pling Store for themes
-* Zoom
-* App Image launcher
+- Slack
+- VSCode
+- Chrome
+- Glimpse
+- Terminator
+- Gnome Tweaks
+- Pling Store for themes
+- Zoom
+- App Image launcher
 
 ## Terminator
 
@@ -43,16 +44,15 @@ In Ubuntu, open terminal and write the following commands:
 
 ### Extensions
 
-* Alternatetab
-* Always zoom workspaces
-* Clipboard indicator
-* Dash to dock
-* Dynamic panel transparency
-* Native window placement
-* Openweather
-* User themes
-* System monitor
-  	* `sudo apt-get install gir1.2-gtop-2.0  gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0`
+- Alternatetab
+- Always zoom workspaces
+- Clipboard indicator
+- Dash to dock
+- Dynamic panel transparency
+- Native window placement
+- Openweather
+- User themes
+- System monitor \* `sudo apt-get install gir1.2-gtop-2.0 gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0`
   and then log out and log in.
 
 ### Swap Left Alt with Left Ctrl
@@ -61,7 +61,7 @@ Go to Tweaks > keyboard and Mouse > Additional Layout Options > Ctrl position > 
 
 ## AppImageLauncher
 
-1. Add Repository 
+1. Add Repository
    `sudo add-apt-repository ppa:appimagelauncher-team/stable`
 2. update packages
    `sudo apt-get update`
@@ -76,18 +76,18 @@ Install it using AppImageLauncher
 Create .themes folder in home
 Themes:
 
-* Orchis
-* Ant Themes
-  		 *Dracula.tar.xz*
-  		 Ant-alt-style.tar
-  		 *Ant-standard-buttons.tar*
-  		 McOS-Shell-themes
-  		 *McOS-Transparent*
-  		 McOS-CTLina-Gnome
-  		 *mc-OS-CTLina-Gnome-Dark*
-  		 WhiteSur-dark
-  		 *WhiteSur-light* 
-  		 WhiteSur Icons
+- Orchis
+- Ant Themes
+  _Dracula.tar.xz_
+  Ant-alt-style.tar
+  _Ant-standard-buttons.tar_
+  McOS-Shell-themes
+  _McOS-Transparent_
+  McOS-CTLina-Gnome
+  _mc-OS-CTLina-Gnome-Dark_
+  WhiteSur-dark
+  _WhiteSur-light_
+  WhiteSur Icons
 
 ## Slack
 
@@ -138,7 +138,7 @@ Go to [Fira Code Github](https://www.github.com/tonsky/FiraCode) and follow inst
 1. Install using Git
    If you are a git user, you can install the theme and keep up to date by cloning the repo:
    `git clone https://github.com/dracula/zsh.git`
-   And creating a symbolic link to  [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) ’s theme folder:
+   And creating a symbolic link to [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) ’s theme folder:
    `ln -s ~/$DRACULA_THEME/dracula.zsh-theme ~/$OH_MY_ZSH/themes/dracula.zsh-theme`
 
 ## zsh-autosuggestions
@@ -195,5 +195,5 @@ nvm use stable
 
 Update package list
 `sudo apt update`
-The command above will also install  [Node.js](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/)  . If you installed Node trough nvm, skip the Node.js installation with:
+The command above will also install [Node.js](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/) . If you installed Node trough nvm, skip the Node.js installation with:
 `sudo apt install —no-install-recommends yarn`
