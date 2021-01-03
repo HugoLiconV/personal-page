@@ -26,7 +26,7 @@ const Card = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     width: 100%;
-    height: 180px;
+    height: 200px;
     .image-container {
       width: 25%;
       min-width: 25%;
@@ -45,9 +45,12 @@ const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  h3 {
+    font-size: 1.8rem;
+  }
 `
 const CardDescription = styled.p`
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-top: 0.5rem;
 `
 
@@ -55,6 +58,9 @@ const CardActions = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  a {
+    font-size: 1.25rem;
+  }
 `
 
 /**
