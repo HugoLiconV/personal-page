@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 const Card = styled.div`
-  color: white;
+  color: var(--font-color);
   display: flex;
-  background-color: rgb(10, 25, 41);
+  background-color: var(--card-bg-color);
   margin-bottom: 2rem;
   border-radius: 10px;
   flex-direction: column;

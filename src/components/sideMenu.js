@@ -19,7 +19,7 @@ const Ul = styled.ul`
   @media (max-width: 768px) {
     z-index: 1;
     flex-flow: column;
-    background-color: rgb(0, 15, 31);
+    background-color: var(--bg-color);
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -29,7 +29,7 @@ const Ul = styled.ul`
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     li > a {
-      color: #fff;
+      color: var(--font-color);
       margin: 0 auto;
       display: block;
       text-align: center;
