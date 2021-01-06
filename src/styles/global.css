@@ -96,48 +96,11 @@ a:not(.active):not(.not-underline):hover,
   background: var(--accent-color);
 }
 
-.header-link {
-  font-size: 3rem;
-}
-
-.active {
-  color: var(--accent-color);
-  border-bottom: none;
-  box-shadow: none;
-}
-
 .grids {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
   margin-top: 32px;
-}
-
-.card {
-  display: grid;
-  overflow: hidden;
-  line-height: 1.5;
-  background-color: var(--card-bg-color);
-  border-radius: 10px;
-}
-
-.card > a img {
-  display: block;
-  max-width: 100%;
-  margin: 0;
-}
-
-.card > header {
-  padding: 24px;
-}
-
-.card > h2:first-child {
-  margin: 0 0 0.5rem 0;
-}
-
-.card .post-tilte {
-  font-size: 1.2rem;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 1024px) {

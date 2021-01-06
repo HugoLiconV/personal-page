@@ -35,6 +35,14 @@ const Ul = styled.ul`
       text-align: center;
     }
   }
+  .active {
+    color: var(--accent-color);
+    border-bottom: none;
+    box-shadow: none;
+  }
+  .header-link {
+    font-size: 3rem;
+  }
 `
 const SideMenu = ({ open, onLinkClick, paths }) => {
   function renderLink({ to, name }) {
