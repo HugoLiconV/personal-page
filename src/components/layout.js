@@ -7,14 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
+import "../styles/layout.css"
 import "normalize.css"
-import "./layout.css"
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
-import styled from "styled-components"
-deckDeckGoHighlightElement()
 
 const Main = styled.main`
   margin: 0 auto;
@@ -23,21 +20,11 @@ const Main = styled.main`
 `
 
 const Layout = ({ children, path, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
+    <React.Fragment>
       <Header path={path} location={location} />
       <Main>{children}</Main>
-    </>
+    </React.Fragment>
   )
 }
 
