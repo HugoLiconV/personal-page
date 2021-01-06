@@ -14,6 +14,8 @@ import "normalize.css"
 import "./layout.css"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 import styled from "styled-components"
+import Typography from '../styles/fonts';
+
 deckDeckGoHighlightElement()
 
 const Main = styled.main`
@@ -36,6 +38,7 @@ const Layout = ({ children, path, location }) => {
   return (
     <>
       <Header path={path} location={location} />
+      <Typography />
       <Main>{children}</Main>
     </>
   )
