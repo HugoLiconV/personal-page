@@ -1,8 +1,8 @@
 import React from "react"
-import devtoIcon from "../images/devto.svg"
-import linkedInIcon from "../images/linkedin-icon.svg"
-import twitterIcon from "../images/twitter.svg"
-import githubIcon from "../images/github-icon.svg"
+import devtoIcon from "../assets/images/devto.svg"
+import linkedInIcon from "../assets/images/linkedin-icon.svg"
+import twitterIcon from "../assets/images/twitter.svg"
+import githubIcon from "../assets/images/github-icon.svg"
 
 const Contact = () => {
   const contactLinks = [
