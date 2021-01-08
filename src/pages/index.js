@@ -3,15 +3,15 @@ import React from "react"
 import About from "../components/about"
 import Contact from "../components/contact"
 import Projects from "../components/projects"
-import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 
-const IndexPage = ({ data: { allMdx } }) => {
+const IndexPage = ({ data: { allMdx }, path }) => {
   const projects = allMdx.edges
     .map(e => e.node)
     .map(node => ({ id: node.id, ...node.frontmatter }))
+
   return (
-    <Layout>
+    <Layout path={path}>
       <About />
       <Projects projects={projects} />
       <Contact />

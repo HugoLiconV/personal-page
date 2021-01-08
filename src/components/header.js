@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import SideMenu from "./sideMenu"
 
@@ -42,6 +42,14 @@ const IconContainer = styled.div`
   }
 `
 
+const HeaderContainer = styled.header`
+  .active {
+    color: var(--accent-color);
+    border-bottom: none;
+    box-shadow: none;
+  }
+`
+
 const BurgerIcon = ({ open }) => (
   <IconContainer open={open}>
     <div />
@@ -61,7 +69,7 @@ const CurrentPageTitle = styled.h1`
   margin: 0;
 `
 
-const Header = ({ path, location }) => {
+const Header = ({ path }) => {
   const [open, setOpen] = useState(false)
   const paths = [
     {
@@ -81,18 +89,33 @@ const Header = ({ path, location }) => {
       name: "Notes",
     },
   ]
-  const currentPage = paths.find(({ to }) => to === path) || ""
+
+  const currentPage = paths.find(({ to }) => {
+    const isHome = path === "/"
+    if (isHome) {
+      return to === "/"
+    }
+    return path.includes(to) && to !== "/"
+  }) || {}
 
   return (
-    <header>
+    <HeaderContainer>
       <BurgerContainer>
-        <CurrentPageTitle>{currentPage.name}</CurrentPageTitle>
+        <CurrentPageTitle>
+          <Link
+            to={currentPage.to}
+            activeClassName="active"
+            partiallyActive={currentPage.to !== "/"}
+          >
+            {currentPage.name}
+          </Link>
+        </CurrentPageTitle>
         <BurgerButton onClick={() => setOpen(!open)}>
           <BurgerIcon open={open} />
         </BurgerButton>
       </BurgerContainer>
       <SideMenu open={open} onLinkClick={() => setOpen(false)} paths={paths} />
-    </header>
+    </HeaderContainer>
   )
 }
 

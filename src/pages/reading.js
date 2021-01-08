@@ -2,9 +2,9 @@ import React from "react"
 import Image from "../assets/images/Ice cream-01.svg"
 import Layout from "../components/layout"
 
-const Reading = () => {
+const Reading = ({ path }) => {
   return (
-    <Layout>
+    <Layout path={path}>
       <div
         style={{
           display: "flex",

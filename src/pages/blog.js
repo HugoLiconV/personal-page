@@ -8,12 +8,13 @@ const Blog = ({
   data: {
     allMdx: { edges },
   },
+  path
 }) => {
   const Posts = edges.map(edge => (
     <PostLink key={edge.node.id} post={edge.node} />
   ))
   return (
-    <Layout>
+    <Layout path={path}>
       <Helmet>
         <title>Blog</title>
         <meta name="description" content="" />
