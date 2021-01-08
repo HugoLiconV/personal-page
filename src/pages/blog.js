@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
 import { Helmet } from "react-helmet"
+import Layout from "../components/layout"
 
 const Blog = ({
   data: {
@@ -12,13 +13,13 @@ const Blog = ({
     <PostLink key={edge.node.id} post={edge.node} />
   ))
   return (
-    <div>
+    <Layout>
       <Helmet>
         <title>Blog</title>
         <meta name="description" content="" />
       </Helmet>
       <div className="grids">{Posts}</div>
-    </div>
+    </Layout>
   )
 }
 

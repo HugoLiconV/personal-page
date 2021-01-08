@@ -4,17 +4,18 @@ import About from "../components/about"
 import Contact from "../components/contact"
 import Projects from "../components/projects"
 import { Helmet } from "react-helmet"
+import Layout from "../components/layout"
 
 const IndexPage = ({ data: { allMdx } }) => {
   const projects = allMdx.edges
     .map(e => e.node)
     .map(node => ({ id: node.id, ...node.frontmatter }))
   return (
-    <div>
+    <Layout>
       <About />
       <Projects projects={projects} />
       <Contact />
-    </div>
+    </Layout>
   )
 }
 

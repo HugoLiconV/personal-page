@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
+import Layout from "../components/layout"
 
 const Notes = (
   {
@@ -12,7 +13,7 @@ const Notes = (
   const Posts = edges.map(edge => (
     <PostLink key={edge.node.id} post={edge.node} />
   ))
-  return <div className="grids">{Posts}</div>
+  return <Layout className="grids">{Posts}</Layout>
 }
 export const pageQuery = graphql`
   query notesQuery {
