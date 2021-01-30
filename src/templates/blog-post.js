@@ -4,10 +4,45 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Provider from "../components/provider"
 import Layout from "../components/layout"
+import styled from "styled-components"
+
+const BlogContainer = styled.div`
+  font-size: 1rem;
+  .post-title {
+    margin-bottom: 0.5rem;
+  }
+  .post-meta {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+  ul {
+    li {
+      margin-bottom: 0.2rem;
+    }
+    &::last-child {
+      margin-bottom: calc(1.45rem / 2);
+    }
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+  h2,
+  h3 {
+    color: var(--secondary-color);
+  }
+  h3 {
+    font-weight: normal;
+  }
+  code {
+    background: #4c1d2d;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+  }
+`
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
-  path
+  path,
 }) {
   const { site, mdx } = data // data.mdx holds your post data
   const { siteMetadata } = site
@@ -20,7 +55,7 @@ export default function Template({
         </title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
-      <div className="blog-post-container">
+      <BlogContainer>
         <article className="post">
           {!frontmatter.thumbnail && (
             <div className="post-thumbnail">
@@ -41,7 +76,7 @@ export default function Template({
             <MDXRenderer>{body}</MDXRenderer>
           </Provider>
         </article>
-      </div>
+      </BlogContainer>
     </Layout>
   )
 }

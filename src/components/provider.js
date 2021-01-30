@@ -27,6 +27,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
             backgroundColor: nightOwl.plain.backgroundColor,
             overflow: "auto",
             WebkitOverflowScrolling: "touch",
+            fontSize: 'calc(1rem + 0.8vw)',
           }}
         >
           <pre
@@ -36,7 +37,8 @@ function SyntaxHighligher({ codeString, language, metastring }) {
               fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
               fontSize: "0.6em",
               ...style,
-              padding: '1.45rem 0'
+              padding: "1rem 0",
+              margin: 0,
             }}
           >
             {tokens.map((line, index) => (
@@ -52,7 +54,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
                 <span
                   style={{
                     display: "inline-block",
-                    
+
                     padding: "0 0.5ch",
                     marginRight: "1ch",
                     textAlign: "right",
@@ -61,7 +63,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
                       ? "rgb(173, 219, 103)"
                       : "transparent",
                     backgroundColor: shouldHighlightLine(index)
-                      ? "hsl(209, 58%, 14%)"
+                      ? "#0f2438"
                       : nightOwl.plain.backgroundColor,
                     color: "rgba(255,255,255,0.46)",
                     userSelect: "none",
@@ -92,6 +94,9 @@ const components = {
       return <pre {...props} />
     }
   },
+  a: props => {
+    return <a className="underline" {...props} />
+  }
 }
 
 function Provider({ children }) {

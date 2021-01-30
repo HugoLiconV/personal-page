@@ -44,7 +44,7 @@ const IconContainer = styled.div`
 
 const HeaderContainer = styled.header`
   .active {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     border-bottom: none;
     box-shadow: none;
   }
