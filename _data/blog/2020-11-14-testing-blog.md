@@ -4,6 +4,7 @@ path: /with-code-blog
 date: 2020-02-20T15:08:12.174Z
 title: Code with Syntax Highlighting with PrismJS
 metaDescription: Code with Syntax Highlighting with PrismJS
+thumbnail: /assets/andrew-ridley-jr4zf-rieji-unsplash.jpg
 ---
 
 ### Code Highlighting
