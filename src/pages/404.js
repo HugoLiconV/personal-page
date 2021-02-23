@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import NotFoundImage from "../assets/images/undraw_not_found_60pq.svg"
+import NotFoundImage from "../assets/images/not_found.svg"
 import { Link } from "gatsby"
 import styled from "styled-components"
 

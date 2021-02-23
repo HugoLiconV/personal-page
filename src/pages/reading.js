@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "../assets/images/Ice cream-01.svg"
+import Image from "../assets/images/Ice cream.svg"
 import Layout from "../components/layout"
 
 const Reading = ({ path }) => {
