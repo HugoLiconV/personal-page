@@ -104,12 +104,19 @@ a:not(.active):not(.not-underline):hover,
 
 .grids {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row: 200px;
   gap: 32px;
   margin-top: 32px;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (orientation: landscape) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 768px)  {
   .grids {
     grid-template-columns: 1fr 1fr 1fr;
   }
