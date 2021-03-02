@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 const Card = styled.article`
   display: grid;
@@ -34,8 +35,8 @@ const PostLink = ({ post }) => {
     <Card>
       {!!post.frontmatter.thumbnail && (
         <Link to={post.frontmatter.path}>
-          <img
-            src={post.frontmatter.thumbnail}
+          <Img
+            fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
             alt={post.frontmatter.title + "- Featured Shot"}
           />
         </Link>

@@ -8,7 +8,7 @@ const Blog = ({
   data: {
     allMdx: { edges },
   },
-  path
+  path,
 }) => {
   const Posts = edges.map(edge => (
     <PostLink key={edge.node.id} post={edge.node} />
@@ -36,7 +36,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             path
           }
         }
