@@ -68,6 +68,11 @@ a:not(.active):not(.not-underline):hover,
   cursor: pointer;
 }
 
+.gatsby-image-wrapper {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
 .p-0 {
   padding: 0;
 }

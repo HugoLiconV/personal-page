@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 const Card = styled.div`
   color: var(--font-color);
@@ -12,29 +13,32 @@ const Card = styled.div`
   .image-container {
     width: 100%;
     height: 100%;
-  }
-
-  .img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      margin: 0;
+    }
   }
 
   /* Tablet */
   @media (min-width: 768px) {
     flex-direction: row;
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
     .image-container {
-      width: 25%;
-      min-width: 25%;
-      height: 100%;
-    }
-    .img {
-      border-bottom-left-radius: 6px;
-      border-top-left-radius: 6px;
+      width: 45%;
+      /* min-width: 25%; */
+      height: auto;
+      img {
+        border-bottom-left-radius: 6px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 0px;
+      }
     }
   }
 `
@@ -80,13 +84,11 @@ const CardActions = styled.div`
 function ProjectCard({ project }) {
   return (
     <Card>
-      <figure className="image-container m-0 p-0">
-        <img
-          src={project.thumbnail}
-          className="img m-0 p-0"
-          alt={project.title}
-        />
-      </figure>
+      <Img
+        src={project.thumbnail}
+        className="image-container m-0 p-0"
+        fluid={project.thumbnail.childImageSharp.fluid}
+      />
       <CardBody>
         <div>
           <h3 className="bold m-0">{project.title}</h3>
