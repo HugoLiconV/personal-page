@@ -6,7 +6,6 @@ import { preToCodeBlock } from "mdx-utils"
 import { nightOwl } from "../theme/night-owl"
 import { calculateLinesToHighlight } from "../utils"
 
-
 function SyntaxHighligher({ codeString, language, metastring }) {
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
@@ -27,7 +26,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
             backgroundColor: nightOwl.plain.backgroundColor,
             overflow: "auto",
             WebkitOverflowScrolling: "touch",
-            fontSize: 'calc(1rem + 0.8vw)',
+            fontSize: "calc(1rem + 0.8vw)",
           }}
         >
           <pre
