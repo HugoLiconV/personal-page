@@ -38,9 +38,12 @@ export const pageQuery = graphql`
             title
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 600
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AVIF, WEBP, PNG]
+                )
               }
             }
             path

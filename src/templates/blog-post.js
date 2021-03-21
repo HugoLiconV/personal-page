@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Provider from "../components/provider"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const BlogContainer = styled.div`
   font-size: 1rem;
@@ -57,21 +58,27 @@ export default function Template({
       </Helmet>
       <BlogContainer>
         <article className="post">
-          {!frontmatter.thumbnail && (
-            <div className="post-thumbnail">
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
-            </div>
-          )}
           {!!frontmatter.thumbnail && (
             <div
-              className="post-thumbnail"
-              style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
+              style={{
+                aspectRatio: "16/9",
+                height: 400,
+                width: "100%",
+              }}
             >
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
+              <GatsbyImage
+                image={frontmatter.thumbnail.childImageSharp.gatsbyImageData}
+                className="post-thumbnail"
+                style={{
+                  objectFit: "cover",
+                  height: "100%",
+                  width: "100%",
+                }}
+              />
             </div>
           )}
+          <h1 className="post-title">{frontmatter.title}</h1>
+          <div className="post-meta">{frontmatter.date}</div>
           <Provider>
             <MDXRenderer>{body}</MDXRenderer>
           </Provider>
@@ -81,22 +88,25 @@ export default function Template({
   )
 }
 
-export const pageQuery = graphql`
-  query($path: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    mdx(frontmatter: { path: { eq: $path } }) {
-      body
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-        thumbnail
-        metaDescription
-      }
+export const pageQuery = graphql`query ($path: String!) {
+  site {
+    siteMetadata {
+      title
     }
   }
+  mdx(frontmatter: {path: {eq: $path}}) {
+    body
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      path
+      title
+      thumbnail {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
+      metaDescription
+    }
+  }
+}
 `

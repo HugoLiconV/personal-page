@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Card = styled.div`
   color: var(--font-color);
@@ -84,11 +84,10 @@ const CardActions = styled.div`
 function ProjectCard({ project }) {
   return (
     <Card>
-      <Img
+      <GatsbyImage
+        image={project.thumbnail.childImageSharp.gatsbyImageData}
         src={project.thumbnail}
-        className="image-container m-0 p-0"
-        fluid={project.thumbnail.childImageSharp.fluid}
-      />
+        className="image-container m-0 p-0" />
       <CardBody>
         <div>
           <h3 className="bold m-0">{project.title}</h3>
@@ -119,7 +118,7 @@ function ProjectCard({ project }) {
         </CardActions>
       </CardBody>
     </Card>
-  )
+  );
 }
 
 export default ProjectCard

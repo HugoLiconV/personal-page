@@ -18,24 +18,27 @@ const Notes = ({
     </Layout>
   )
 }
-export const pageQuery = graphql`
-  query notesQuery {
-    allMdx(
-      filter: { frontmatter: { template: { eq: "Note" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            thumbnail
-            path
+export const pageQuery = graphql`query notesQuery {
+  allMdx(
+    filter: {frontmatter: {template: {eq: "Note"}}}
+    sort: {order: DESC, fields: [frontmatter___date]}
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(width: 800, layout: CONSTRAINED)
+            }
           }
+          path
         }
       }
     }
   }
+}
 `
 export default Notes
