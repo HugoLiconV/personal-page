@@ -37,7 +37,7 @@ export const query = graphql`
                   width: 800
                   layout: CONSTRAINED
                   placeholder: BLURRED
-                  formats: [AVIF, WEBP, PNG]
+                  formats: [WEBP, PNG]
                 )
               }
             }

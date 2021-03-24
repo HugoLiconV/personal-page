@@ -1,8 +1,10 @@
 import React from "react"
+import SEO from "./seo"
 
 const About = () => {
   return (
-    <>
+    <div>
+      <SEO title="About" />
       <p>
         Full-stack developer with experience building complete solutions on
         React, Node and React Native.
@@ -16,7 +18,7 @@ const About = () => {
         Native and a web app using React + GraphQL for a medication delivery
         system.
       </p>
-    </>
+    </div>
   )
 }
 

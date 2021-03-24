@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
-import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Blog = ({
   data: {
@@ -15,10 +15,7 @@ const Blog = ({
   ))
   return (
     <Layout path={path}>
-      <Helmet>
-        <title>Blog</title>
-        <meta name="description" content="" />
-      </Helmet>
+      <SEO title="Blog" />
       <div className="grids">{Posts}</div>
     </Layout>
   )
@@ -42,7 +39,7 @@ export const pageQuery = graphql`
                   width: 600
                   layout: CONSTRAINED
                   placeholder: BLURRED
-                  formats: [AVIF, WEBP, PNG]
+                  formats: [WEBP, PNG]
                 )
               }
             }

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Notes = ({
   data: {
@@ -14,31 +15,33 @@ const Notes = ({
   ))
   return (
     <Layout path={path}>
+      <SEO title="Notes" />
       <div className="grids">{Posts}</div>
     </Layout>
   )
 }
-export const pageQuery = graphql`query notesQuery {
-  allMdx(
-    filter: {frontmatter: {template: {eq: "Note"}}}
-    sort: {order: DESC, fields: [frontmatter___date]}
-  ) {
-    edges {
-      node {
-        id
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(width: 800, layout: CONSTRAINED)
+export const pageQuery = graphql`
+  query notesQuery {
+    allMdx(
+      filter: { frontmatter: { template: { eq: "Note" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 800, layout: CONSTRAINED)
+              }
             }
+            path
           }
-          path
         }
       }
     }
   }
-}
 `
 export default Notes

@@ -1,10 +1,12 @@
 import React from "react"
 import Image from "../assets/images/Ice cream.svg"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Reading = ({ path }) => {
   return (
     <Layout path={path}>
+      <SEO title="Reading" />
       <div
         style={{
           display: "flex",

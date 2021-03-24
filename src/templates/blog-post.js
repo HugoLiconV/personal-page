@@ -6,6 +6,7 @@ import Provider from "../components/provider"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
+import SEO from "../components/seo"
 
 const BlogContainer = styled.div`
   font-size: 1rem;
@@ -62,12 +63,10 @@ export default function Template({
   const { frontmatter, body } = mdx
   return (
     <Layout path={path}>
-      <Helmet>
-        <title>
-          {frontmatter.title} | {siteMetadata.title}
-        </title>
-        <meta name="description" content={frontmatter.metaDescription} />
-      </Helmet>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.metaDescription}
+      />
       <BlogContainer>
         <article className="post">
           <h1 className="post-title">{frontmatter.title}</h1>
