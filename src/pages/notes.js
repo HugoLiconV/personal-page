@@ -16,6 +16,11 @@ const Notes = ({
   return (
     <Layout path={path}>
       <SEO title="Notes" />
+      <p>
+        These are notes on books, courses, tutorials, or articles, some of them
+        are unedited, disorganized and might not be as useful for you as they
+        are for me.
+      </p>
       <div className="grids">{Posts}</div>
     </Layout>
   )
