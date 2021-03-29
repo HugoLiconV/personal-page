@@ -4,6 +4,7 @@ import About from "../components/about"
 import Contact from "../components/contact"
 import Projects from "../components/projects"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const IndexPage = ({ data: { allMdx }, path }) => {
   const projects = allMdx.edges
@@ -12,6 +13,7 @@ const IndexPage = ({ data: { allMdx }, path }) => {
 
   return (
     <Layout path={path}>
+      <SEO title="About" />
       <About />
       <Projects projects={projects} />
       <Contact />

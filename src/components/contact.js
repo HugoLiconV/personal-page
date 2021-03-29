@@ -40,7 +40,7 @@ const Contact = () => {
         >
           email
         </a>{" "}
-        or you cand find me on:
+        or you can find me on:
       </p>
       <div
         style={{ display: "flex", width: 150, justifyContent: "space-around" }}
