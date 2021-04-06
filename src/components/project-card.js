@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
+import { trackClickProject } from "../services/analytics"
 
 const Card = styled.div`
   color: var(--font-color);
@@ -87,7 +88,8 @@ function ProjectCard({ project }) {
       <GatsbyImage
         image={project.thumbnail.childImageSharp.gatsbyImageData}
         src={project.thumbnail}
-        className="image-container m-0 p-0" />
+        className="image-container m-0 p-0"
+      />
       <CardBody>
         <div>
           <h3 className="bold m-0">{project.title}</h3>
@@ -101,6 +103,9 @@ function ProjectCard({ project }) {
               className="underline"
               style={{ marginRight: 16 }}
               rel="noopener noreferrer"
+              onClick={() => {
+                trackClickProject(project.title, "source code")
+              }}
             >
               Source code
             </a>
@@ -111,6 +116,9 @@ function ProjectCard({ project }) {
               target="_blank"
               className="underline"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackClickProject(project.title, "live")
+              }}
             >
               Live version
             </a>
@@ -118,7 +126,7 @@ function ProjectCard({ project }) {
         </CardActions>
       </CardBody>
     </Card>
-  );
+  )
 }
 
 export default ProjectCard

@@ -1,4 +1,5 @@
 import React from "react"
+import { trackClickResume } from "../services/analytics"
 
 const About = () => {
   return (
@@ -20,6 +21,7 @@ const About = () => {
           target="_blank"
           className="underline"
           rel="noopener noreferrer"
+          onClick={trackClickResume}
         >
           {" "}
           here

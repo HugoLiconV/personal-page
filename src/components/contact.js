@@ -3,6 +3,7 @@ import devtoIcon from "../assets/images/devto.svg"
 import linkedInIcon from "../assets/images/linkedin-icon.svg"
 import twitterIcon from "../assets/images/twitter.svg"
 import githubIcon from "../assets/images/github-icon.svg"
+import { trackClickContact } from "../services/analytics"
 
 const Contact = () => {
   const contactLinks = [
@@ -52,6 +53,9 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="not-underline"
             key={href}
+            onClick={() => {
+              trackClickContact(alt)
+            }}
           >
             <img src={src} alt={alt} height={24} />
           </a>
