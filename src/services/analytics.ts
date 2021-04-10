@@ -1,14 +1,23 @@
-import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-
 enum TrackingEvents {
   click_resume = "click_resume",
   click_project = "click_project",
   click_contact = "click_contact",
 }
 
+function trackCustomEvent({
+  action,
+  data = {},
+}: {
+  action: string
+  data?: Record<string, unknown>
+}) {
+  if (typeof window !== "undefined") {
+    window.gtag("event", action, { ...data })
+  }
+}
+
 export function trackClickResume() {
   trackCustomEvent({
-    category: TrackingEvents.click_resume,
     action: TrackingEvents.click_resume,
   })
 }
@@ -18,13 +27,18 @@ export function trackClickProject(
   clickType: "source code" | "live"
 ) {
   trackCustomEvent({
-    category: TrackingEvents.click_project,
-    action: `${projectName} - ${clickType}`,
+    action: TrackingEvents.click_project,
+    data: {
+      name: projectName,
+      link: clickType,
+    },
   })
 }
 export function trackClickContact(contact: string) {
   trackCustomEvent({
-    category: TrackingEvents.click_contact,
-    action: contact
+    action: TrackingEvents.click_contact,
+    data: {
+      name: contact,
+    },
   })
 }
