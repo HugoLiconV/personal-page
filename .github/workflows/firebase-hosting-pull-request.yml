@@ -11,7 +11,7 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Run test script
-        env: # Or as an environment variable
+        with: # Or as an environment variable
           PANELBEAR_SITE_ID: ${{ secrets.PANELBEAR_SITE_ID }}
         run: node src/test.js
       # - run: npm run build
