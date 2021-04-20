@@ -13,7 +13,6 @@ const IndexPage = ({ data: { allMdx }, path }) => {
 
   return (
     <Layout path={path}>
-      <SEO title="About" />
       <About />
       <Projects projects={projects} />
       <Contact />

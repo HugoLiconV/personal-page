@@ -10,7 +10,6 @@
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^3.0.0",
     "gatsby-image": "^3.0.0",
-    "gatsby-plugin-google-gtag": "^3.2.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-mdx": "^2.0.0",

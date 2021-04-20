@@ -4,6 +4,7 @@ import PostLink from "../components/post-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../assets/images/Ice cream.svg"
+import { trackClickDevto } from "../services/analytics"
 
 const Blog = ({
   data: {
@@ -44,6 +45,7 @@ const Blog = ({
           target="_blank"
           className="underline"
           rel="noopener noreferrer"
+          onClick={trackClickDevto}
         >
           here
         </a>
