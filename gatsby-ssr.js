@@ -6,11 +6,8 @@
 
 // You can delete this file if you're not using it
 import React from "react"
-import dotenv from "dotenv"
 
-dotenv.config({ path: ".env" })
-
-const PANELBEAR_SITE_ID = process.env.PANELBEAR_SITE_ID
+const PANELBEAR_SITE_ID = "IZP4kmdyuFo"
 
 const PANELBEAR_CONFIG = {
   site: PANELBEAR_SITE_ID,
