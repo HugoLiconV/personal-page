@@ -18,6 +18,7 @@ const Blog = ({
   return (
     <Layout path={path}>
       <SEO title="Blog" />
+      <div className="grids">{Posts}</div>
       <div
         style={{
           display: "flex",
