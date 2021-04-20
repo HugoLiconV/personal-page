@@ -19,38 +19,6 @@ const Blog = ({
     <Layout path={path}>
       <SEO title="Blog" />
       <div className="grids">{Posts}</div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 16,
-          textAlign: "center",
-        }}
-      >
-        <img
-          src={Image}
-          alt="Not found"
-          style={{
-            height: "30vh",
-          }}
-        />
-        <h1>Work in progress</h1>
-      </div>
-      <p>
-        I am in progress of copying my blogs from dev.to to this page, if you
-        are interested you can find them{" "}
-        <a
-          href="https://dev.to/hugoliconv"
-          target="_blank"
-          className="underline"
-          rel="noopener noreferrer"
-          onClick={trackClickDevto}
-        >
-          here
-        </a>
-      </p>
     </Layout>
   )
 }
