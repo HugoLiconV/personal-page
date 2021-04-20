@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Print variable 
-        run: echo $PANELBEAR_SITE_ID
-      # - name: Install Dependencies
-      #   run: yarn
+      - name: Install Dependencies
+        run: yarn
+      - name: Run test script
+        run: node src/test.js
       # - run: npm run build
       # - uses: FirebaseExtended/action-hosting-deploy@v0
       #   with:
