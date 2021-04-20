@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install gatsby
-        run: npm install -g gatsby-cli
       - name: Install Dependencies
         run: yarn
       - run: npm run build
