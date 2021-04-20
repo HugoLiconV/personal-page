@@ -12,7 +12,7 @@ jobs:
         run: yarn
       - name: Run test script
         env: # Or as an environment variable
-          super_secret: ${{ secrets.PANELBEAR_SITE_ID }}
+          PANELBEAR_SITE_ID: ${{ secrets.PANELBEAR_SITE_ID }}
         run: node src/test.js
       # - run: npm run build
       # - uses: FirebaseExtended/action-hosting-deploy@v0
