@@ -10,8 +10,10 @@ import dotenv from "dotenv"
 
 dotenv.config({ path: ".env" })
 
+const PANELBEAR_SITE_ID = process.env.PANELBEAR_SITE_ID
+
 const PANELBEAR_CONFIG = {
-  site: process.env.PANELBEAR_SITE_ID,
+  site: PANELBEAR_SITE_ID,
   spaMode: "history",
   debug: false,
 }
