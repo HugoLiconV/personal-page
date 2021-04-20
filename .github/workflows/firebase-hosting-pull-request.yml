@@ -11,8 +11,9 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Run test script
-        with: # Or as an environment variable
+        env: # Or as an environment variable
           PANELBEAR_SITE_ID: ${{ secrets.PANELBEAR_SITE_ID }}
+          FIREBASE_SERVICE_ACCOUNT_HUGOLICON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HUGOLICON }}
         run: node src/test.js
       # - run: npm run build
       # - uses: FirebaseExtended/action-hosting-deploy@v0
