@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: View files
+        run: ls
       - name: Install Dependencies
         run: yarn
       - run: npm run build
