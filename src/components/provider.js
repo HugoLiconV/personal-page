@@ -27,6 +27,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
             overflow: "auto",
             WebkitOverflowScrolling: "touch",
             fontSize: "calc(1rem + 0.8vw)",
+            marginBottom: '1.25rem'
           }}
         >
           <pre
