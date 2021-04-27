@@ -26,7 +26,7 @@ const BlogContainer = styled.div`
     }
   }
   p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
   }
   h2,
   h3 {
@@ -46,6 +46,7 @@ const ImageContainer = styled.div`
   aspect-ratio: 16/9;
   height: 400px;
   width: 100%;
+  margin-bottom: 32px;
 
   .post-thumbnail {
     object-fit: cover;
