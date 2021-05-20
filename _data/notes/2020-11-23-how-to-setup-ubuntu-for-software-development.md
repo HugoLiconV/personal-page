@@ -3,6 +3,7 @@ template: Note
 path: /notes/how-to-setup-ubuntu
 date: 2020-11-23T01:54:03.921Z
 title: How to setup Ubuntu for software development
+published: true
 metaDescription: How to setup Ubuntu for software development
 ---
 

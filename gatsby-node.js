@@ -8,7 +8,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       allMdx(
-        filter: { frontmatter: { template: { in: ["BlogPost", "Note"] } } }
+        filter: {
+          frontmatter: {
+            template: { in: ["BlogPost", "Note"] }
+            published: { eq: true }
+          }
+        }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {

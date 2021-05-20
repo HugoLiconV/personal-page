@@ -3,6 +3,7 @@ template: BlogPost
 path: /blog/lets-build-a-todo-app-using-vuejs
 date: 2019-02-28T00:37:03.757Z
 title: Let's build a Todo App Using Vue.js
+published: true
 metaDescription: Let's build a simple and retro Todo App using Vue.js and NES.css
 thumbnail: /assets/54p1qrmpn3u7fppmahl7.png
 ---

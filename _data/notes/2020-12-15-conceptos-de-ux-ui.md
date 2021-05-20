@@ -3,6 +3,7 @@ template: Note
 path: /notes/ux-ui-concepts
 date: 2020-12-15T03:24:24.100Z
 title: Conceptos de UX/UI
+published: true
 metaDescription: Lista de conceptos que se vieron en el curso de UX/UI de Bedu.
 ---
 
