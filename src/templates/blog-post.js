@@ -1,5 +1,4 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Provider from "../components/provider"
@@ -59,8 +58,7 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   path,
 }) {
-  const { site, mdx } = data // data.mdx holds your post data
-  const { siteMetadata } = site
+  const { mdx } = data // data.mdx holds your post data
   const { frontmatter, body } = mdx
   return (
     <Layout path={path}>

@@ -6,6 +6,11 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  button {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
   li {
     display: flex;
     padding: 18px 10px;
@@ -42,11 +47,13 @@ const Ul = styled.ul`
 const SideMenu = ({ open, onLinkClick, paths }) => {
   function renderLink({ to, name }) {
     return (
-      <li key={to} onClick={onLinkClick}>
-        <Link to={to} activeClassName="active" partiallyActive={to !== "/"}>
-          <h3 className="header-link">{name}</h3>
-        </Link>
-      </li>
+      <button onClick={onLinkClick}>
+        <li key={to}>
+          <Link to={to} activeClassName="active" partiallyActive={to !== "/"}>
+            <h3 className="header-link">{name}</h3>
+          </Link>
+        </li>
+      </button>
     )
   }
 
