@@ -43,7 +43,7 @@ const BlogContainer = styled.div`
 
 const ImageContainer = styled.div`
   aspect-ratio: 16/9;
-  height: 400px;
+  height: 170px;
   width: 100%;
   margin-bottom: 32px;
 
@@ -51,6 +51,22 @@ const ImageContainer = styled.div`
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  img {
+    border-radius: 20px;
+  }
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    height: 246px;
+  }
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    height: 370px;
+  }
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
   }
 `
 
