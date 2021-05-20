@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Image from "../assets/images/Ice cream.svg"
-import { trackClickDevto } from "../services/analytics"
 
 const Blog = ({
   data: {
@@ -23,11 +21,12 @@ const Blog = ({
   )
 }
 
-// <div className="grids">{Posts}</div>
 export const pageQuery = graphql`
   query indexPageQuery {
     allMdx(
-      filter: { frontmatter: { template: { eq: "BlogPost" } } }
+      filter: {
+        frontmatter: { template: { eq: "BlogPost" }, published: { eq: true } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

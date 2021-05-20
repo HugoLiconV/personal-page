@@ -53,6 +53,10 @@ collections:
         widget: string
         pattern: [/, "Path must start with /"]
         hint: "Path must start with /"
+      - name: published
+        label: Published?
+        widget: boolean
+        default: false
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - label: Meta Description

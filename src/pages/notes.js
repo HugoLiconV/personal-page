@@ -28,7 +28,9 @@ const Notes = ({
 export const pageQuery = graphql`
   query notesQuery {
     allMdx(
-      filter: { frontmatter: { template: { eq: "Note" } } }
+      filter: {
+        frontmatter: { template: { eq: "Note" }, published: { eq: true } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

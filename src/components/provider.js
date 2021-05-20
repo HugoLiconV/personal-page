@@ -27,7 +27,7 @@ function SyntaxHighligher({ codeString, language, metastring }) {
             overflow: "auto",
             WebkitOverflowScrolling: "touch",
             fontSize: "calc(1rem + 0.8vw)",
-            marginBottom: '1.25rem'
+            marginBottom: "1.25rem",
           }}
         >
           <pre
@@ -95,8 +95,12 @@ const components = {
     }
   },
   a: props => {
-    return <a className="underline" {...props} />
-  }
+    return (
+      <a className="underline" {...props}>
+        {props.children}
+      </a>
+    )
+  },
 }
 
 function Provider({ children }) {

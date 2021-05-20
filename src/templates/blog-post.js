@@ -1,5 +1,4 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Provider from "../components/provider"
@@ -44,7 +43,7 @@ const BlogContainer = styled.div`
 
 const ImageContainer = styled.div`
   aspect-ratio: 16/9;
-  height: 400px;
+  height: 170px;
   width: 100%;
   margin-bottom: 32px;
 
@@ -53,14 +52,29 @@ const ImageContainer = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  img {
+    border-radius: 20px;
+  }
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    height: 246px;
+  }
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    height: 370px;
+  }
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+  }
 `
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   path,
 }) {
-  const { site, mdx } = data // data.mdx holds your post data
-  const { siteMetadata } = site
+  const { mdx } = data // data.mdx holds your post data
   const { frontmatter, body } = mdx
   return (
     <Layout path={path}>
