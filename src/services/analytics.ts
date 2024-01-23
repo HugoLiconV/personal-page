@@ -7,13 +7,13 @@ enum TrackingEvents {
 
 declare global {
   interface Window {
-    panelbear: (category: string, action: string) => void
+    cronitor: (category: string, action: string) => void
   }
 }
 
 function trackCustomEvent(event: string) {
   if (typeof window !== "undefined") {
-    window.panelbear("track", event)
+    window.cronitor("track", event)
   }
 }
 

@@ -15,19 +15,24 @@ const PANELBEAR_CONFIG = {
   debug: false,
 }
 
+const CRONITOR_CONFIG = {
+  clientKey: "7e98b2c7980979eb887e99983d65ecf9",
+  debug: true,
+}
+
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <script
-      key="panelbear-analytics-src"
+      key="cronitor-rum-src"
       async
-      src={`https://cdn.panelbear.com/analytics.js?site=${PANELBEAR_SITE_ID}`}
+      src="https://rum.cronitor.io/script.js"
     />,
     <script
-      key="panelbear-analytics-code"
+      key="cronitor-rum-code"
       dangerouslySetInnerHTML={{
         __html: `
-          window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
-          panelbear('config', ${JSON.stringify(PANELBEAR_CONFIG)});
+          window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+          cronitor('config', ${JSON.stringify(CRONITOR_CONFIG)});
         `,
       }}
     />,
