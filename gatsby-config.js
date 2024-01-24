@@ -35,8 +35,8 @@ module.exports = {
         name: `Hugo's website`,
         short_name: `Hugo`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000f1f`,
+        theme_color: `#000f1f`,
         display: `minimal-ui`,
         icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
       },
