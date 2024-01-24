@@ -1,9 +1,9 @@
 :root {
-  --bg-color: rgb(0, 15, 31);
+  --bg-color: #000f1f;
   --font-color: white;
   --secondary-color: #4c40ff;
   --accent-color: #fd3e81;
-  --card-bg-color: rgb(10, 25, 41);
+  --card-bg-color: #0a1929;
 }
 
 html,
@@ -24,9 +24,10 @@ body {
   background-color: var(--bg-color);
   font-family: "Open Sans", sans-serif;
   color: var(--font-color);
-  font-size: calc(1rem + 0.8vw);
+  font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 0.015em;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -35,12 +36,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 
@@ -53,7 +54,7 @@ a {
   text-decoration: none;
   background-image: linear-gradient(
     180deg,
-    transparent 65%,
+    transparent 90%,
     var(--secondary-color) 0
   );
   background-size: 0 100%;
@@ -68,10 +69,20 @@ a:not(.active):not(.not-underline):hover,
   cursor: pointer;
 }
 
-/* .gatsby-image-wrapper img[src*="base64"] {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
-} */
+aside {
+  background-color: var(--card-bg-color);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 24px 32px;
+  border-radius: 4px;
+  border-left: 3px solid;
+  border-color: var(--secondary-color);
+}
+
+strong {
+  display: block;
+  margin-bottom: 8px;
+}
 
 .p-0 {
   padding: 0;

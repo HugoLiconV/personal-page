@@ -47,8 +47,8 @@ const Ul = styled.ul`
 const SideMenu = ({ open, onLinkClick, paths }) => {
   function renderLink({ to, name }) {
     return (
-      <button onClick={onLinkClick}>
-        <li key={to}>
+      <button onClick={onLinkClick} key={to}>
+        <li>
           <Link to={to} activeClassName="active" partiallyActive={to !== "/"}>
             <h3 className="header-link">{name}</h3>
           </Link>

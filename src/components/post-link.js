@@ -26,9 +26,13 @@ const Card = styled.article`
     margin: 0.5rem 0;
   }
 
-  .post-tilte {
+  .post-title {
     font-size: 1.2rem;
     margin-bottom: 0;
+    font-weight: bold;
+  }
+  .post-meta {
+    color: var(--accent-color);
   }
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {

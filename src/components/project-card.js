@@ -13,15 +13,15 @@ const Card = styled.div`
 
   .image-container {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4 / 3;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     img {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
       margin: 0;
     }
   }
@@ -30,16 +30,11 @@ const Card = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     width: 100%;
-    /* height: 200px; */
     .image-container {
-      width: 45%;
-      /* min-width: 25%; */
-      height: auto;
-      img {
-        border-bottom-left-radius: 6px;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 0px;
-      }
+      width: 500px;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 0px;
     }
   }
 `
@@ -55,7 +50,6 @@ const CardBody = styled.div`
   }
 `
 const CardDescription = styled.p`
-  font-size: 1.25rem;
   margin-top: 0.5rem;
 `
 
@@ -63,9 +57,6 @@ const CardActions = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  a {
-    font-size: 1.25rem;
-  }
 `
 
 /**

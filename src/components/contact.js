@@ -4,6 +4,16 @@ import linkedInIcon from "../assets/images/linkedin-icon.svg"
 import twitterIcon from "../assets/images/twitter.svg"
 import githubIcon from "../assets/images/github-icon.svg"
 import { trackClickContact } from "../services/analytics"
+import styled from "styled-components"
+
+const FlexContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`
+
+const Icon = styled.img`
+  margin: 0;
+`
 
 const Contact = () => {
   const contactLinks = [
@@ -31,7 +41,7 @@ const Contact = () => {
 
   return (
     <>
-      <h1>Contact</h1>
+      <h2>Contact</h2>
       <p>
         If you would like to talk send me an{" "}
         <a
@@ -43,9 +53,7 @@ const Contact = () => {
         </a>{" "}
         or you can find me on:
       </p>
-      <div
-        style={{ display: "flex", width: 150, justifyContent: "space-around" }}
-      >
+      <FlexContainer>
         {contactLinks.map(({ alt, href, src }) => (
           <a
             href={href}
@@ -57,10 +65,10 @@ const Contact = () => {
               trackClickContact(alt)
             }}
           >
-            <img src={src} alt={alt} height={24} />
+            <Icon src={src} alt={alt} height={24} />
           </a>
         ))}
-      </div>
+      </FlexContainer>
     </>
   )
 }
