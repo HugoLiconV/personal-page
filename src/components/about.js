@@ -5,17 +5,26 @@ const About = () => {
   return (
     <div>
       <p>
-        Front-end developer working at{" "}
+        Software engineer with 5+ years of experience driven by a passion for
+        creating seamless user experiences, I specialize in building frontend
+        solutions for both mobile and web platforms.
+      </p>
+      <p>
+        My previous role was as a Software Engineer at{" "}
         <a
-          href="http://casai.com"
+          href="https://www.usesammy.com/en"
           className="underline"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Casai
+          Sammy
         </a>{" "}
-        with experience with React, Node, and React Native. (You can find out
-        more{" "}
+        helping them building a financial technology platform that provides a
+        bank account in the U.S. without the need to be a resident or U.S.
+        citizen designed for international digital professionals.
+      </p>
+      <p>
+        Want to learn more about my experience? Check out my resume{" "}
         <a
           href="https://www.dropbox.com/s/xa7cqxx4mbn07p1/Hugo%20Licon%20-%20Resume.pdf?dl=0"
           target="_blank"
@@ -23,14 +32,8 @@ const About = () => {
           rel="noopener noreferrer"
           onClick={trackClickResume}
         >
-          {" "}
           here
         </a>
-        )
-      </p>
-      <p>
-        I am passionate about helping people through software, sharing my
-        knowledge and learning more every day.
       </p>
     </div>
   )
